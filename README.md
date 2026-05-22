@@ -11,7 +11,7 @@ This repository contains files for getting WinJS-based Windows 8 apps to run in 
 ### Current setup for getting games running:
  1. Copy Windows_emulator.js, IE_emulator.js, and the WinJS folder into the game's directory.
  2. Find the main HTML file for the game (usually labeled "default.html").
- 3. Change the WinJS file paths to not start with two dashes (for .
+ 3. Change the WinJS file paths to not start with two dashes.
  4. Import IE_emulator.js before all other scripts.
  5. Import Windows_emulator.js right after base.js and ui.js.
  6. Use a local web server (such as vscode's LiveServer extension) to view the app in your browser.
