@@ -64,10 +64,10 @@ class MSGesture {
         // DOMSubtreeModified: "MutationObserver",
 
         // Touch fallback mappings
-        touchstart: "pointerdown",
-        touchmove: "pointermove",
-        touchend: "pointerup",
-        touchcancel: "pointercancel",
+        // touchstart: "pointerdown",
+        // touchmove: "pointermove",
+        // touchend: "pointerup",
+        // touchcancel: "pointercancel",
 
         // Mouse fallback mappings
         mousedown: "pointerdown",
@@ -94,6 +94,11 @@ class MSGesture {
     const originalAddEventListener = EventTarget.prototype.addEventListener;
 
     EventTarget.prototype.addEventListener = function (type, listener, options) {
+
+        // TODO: modern browsers introduced this feature called "passive events" that makes
+        // certain events automatically passive. Ideally, this should be removed, but it usually
+        // doesn't cause issues.
+
         return originalAddEventListener.call(
             this,
             modernizeEventName(type),
