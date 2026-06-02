@@ -73,7 +73,20 @@ window.Windows = {
                 appId: null, // set later
 
                 licenseInformation: {
+
+                    addEventListener(event_str, func) {
+                        switch (event_str){
+                            case "licensechanged":
+                                // runs if a user buys the app, buys premium features, etc.
+                                // for now, we're only emulating fully bought apps.
+                                break;
+                            default:
+                                break;
+                        }
+                    },
+
                     isActive: true,
+                    isTrial: false,
 
                     productLicenses: {
                         // TODO: implement this better
@@ -94,6 +107,16 @@ window.Windows = {
     Storage: {
         ApplicationData: {
             current: {
+
+                addEventListener(event_str, func) {
+                    switch (event_str){
+                        case "datachanged":
+                            // Only runs if an external roaming data change occurs
+                            break;
+                        default:
+                            break;
+                    }    
+                },
 
                 // TODO: make file emulation use actual files, and create a file class to represent files
                 localFolder: {
@@ -349,6 +372,17 @@ window.Windows = {
                         null
                     );
                 }
+            }
+        },
+
+        Popups: {
+            MessageDialog(string) {
+                return {
+                    // Note: not actually async
+                    showAsync() {
+                        alert(string);
+                    }
+                };
             }
         }
     },
