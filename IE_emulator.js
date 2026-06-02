@@ -236,6 +236,22 @@ class MSGesture {
             }
         });
 
+        // Iterate over all style elements
+        const style_elems = document.querySelectorAll('style');
+        for (const style of style_elems) {
+            
+            // Get text
+            let css = style.textContent;
+
+            // Convert text
+            const newText = convertCssRules(css);
+
+            // Put new css rules in style element
+            if (css !== newText) {
+                style.textContent = newText;
+            }
+        }
+
         // Iterate over all stylesheets
         const links = document.querySelectorAll('link');
         for (const link of links) {
