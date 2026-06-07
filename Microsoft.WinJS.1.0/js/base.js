@@ -84,6 +84,17 @@
                         { value: {}, writable: false, enumerable: true, configurable: true }
                     );
                 }
+
+                // Undefined failsafe
+                // This very rarely occurs if Object.defineProperty is improperly
+                // replaced with a shim.
+                if (!currentNamespace[namespaceName]) {
+                    console.warn(
+                        "Strange issue occured where Object.defineProperty failed to assign a property." +
+                        "\nThis is most likely due to an impoper polyfill.");
+                    currentNamespace[namespaceName] = {}
+                }
+                
                 currentNamespace = currentNamespace[namespaceName];
             }
 
