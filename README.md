@@ -6,6 +6,7 @@ This repository contains files for getting WinJS-based Windows 8 apps to run in 
  - All of the code is designed for and tested on Microsoft Edge, as this is most similar to the engines that were used to run the apps (Internet Explorer 10 would be the best, but I can't get it to run on a modern computer).
  - Some apps may expect a max framerate of 60 FPS and won't run properly if ran at a higher framerate.
  - Some apps may expect a 4:3 aspect ratio and may have minor graphical issues if ran at 16:9.
+ - Some apps may expect the webpage to be in fullscreen and may have minor issues if ran in windowed mode.
  - The emulation is not perfect, and significant modifications to the emulator or app may be needed to simply get it running.
 
 ### Current setup for getting games running:
