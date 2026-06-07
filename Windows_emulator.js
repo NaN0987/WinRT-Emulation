@@ -433,6 +433,15 @@ window.Windows = {
                     return null;
                 }
             }
+        },
+
+        Input: {
+            TouchCapabilities() {
+                // TODO: implement this more
+                return {
+                    touchPresent: false
+                }
+            }
         }
     },
 
