@@ -205,8 +205,15 @@ class MSGesture {
 
     const ruleConversionMap = {
         "-ms-user-select": "user-select",
-        "-ms-flexbox": "flex",
-        "-ms-flex-direction": "flex-direction"
+        "-ms-flexbox;": "flex;",
+        "-ms-flex-align": "align-items",
+        "-ms-flex-pack": "justify-content",
+        "-ms-flex-direction": "flex-direction",
+        "-ms-grid;": "grid;",
+        "-ms-grid-columns": "grid-template-columns",
+        "-ms-grid-rows": "grid-template-rows",
+        "-webkit-interpolation-mode: nearest-neighbor;": "image-rendering: pixelated;",
+        "-webkit-interpolation-mode:nearest-neighbor;": "image-rendering: pixelated;",
     }
 
     // Function for converting style properties
